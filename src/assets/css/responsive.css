@@ -1,0 +1,808 @@
+/* =====================================================================
+   RESPONSIVE STYLES
+   All media queries for the site live here, grouped by breakpoint.
+   Loaded after App.css and component.css so these rules win.
+
+   Breakpoints
+     ≥ 1600px  wide screen
+     ≥ 1100px  large desktop
+     992–1199  small laptop
+     ≤ 1024px  laptop / small desktop
+     ≤ 991px   tablet
+     ≤ 768px   small tablet / large phone (mobile menu kicks in)
+     ≤ 576px   phone
+     ≤ 480px   small phone
+     ≤ 360px   extra small phone
+   ===================================================================== */
+
+/* ======================= WIDE SCREEN (≥ 1600px) START ====================== */
+@media (min-width: 1600px) {
+  /* basic settings: use more of big monitors */
+  :root {
+    --container-width: 1320px;
+  }
+
+  .section {
+    padding: 100px 0;
+  }
+}
+/* ======================= WIDE SCREEN (≥ 1600px) END ====================== */
+
+/* ======================= SMALL LAPTOP (992px – 1199px) START ====================== */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* hero: quick-book bar is too narrow for one row here, so stack the toggle */
+  .hero-quick {
+    flex-wrap: wrap;
+  }
+
+  .hero-quick-toggle {
+    width: 100%;
+  }
+
+  .hero-quick-toggle button {
+    flex: 1;
+    justify-content: center;
+  }
+}
+/* ======================= SMALL LAPTOP (992px – 1199px) END ====================== */
+
+/* ======================= LARGE DESKTOP (≥ 1100px) START ====================== */
+@media (min-width: 1100px) {
+  /* testimonials */
+  .testimonial:nth-child(even) {
+    margin-top: 40px;
+  }
+}
+/* ======================= LARGE DESKTOP (≥ 1100px) END ====================== */
+
+/* ======================= DESKTOP & TABLET (≥ 769px) START ====================== */
+@media (min-width: 769px) {
+  /* floating buttons */
+  .float-call {
+    display: none;
+  }
+}
+/* ======================= DESKTOP & TABLET (≥ 769px) END ====================== */
+
+/* ======================= TABLET LANDSCAPE ONLY (769px – 1024px) START ====================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* navbar extras */
+  .navbar-phone {
+    display: none;
+  }
+
+  .navbar-links {
+    gap: 18px;
+  }
+}
+/* ======================= TABLET LANDSCAPE ONLY (769px – 1024px) END ====================== */
+
+/* ======================= LAPTOP / SMALL DESKTOP (≤ 1024px) START ====================== */
+@media (max-width: 1024px) {
+  /* footer */
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+/* ======================= LAPTOP / SMALL DESKTOP (≤ 1024px) END ====================== */
+
+/* ======================= TABLET (≤ 991px) START ====================== */
+@media (max-width: 991px) {
+  /* global */
+  .section {
+    padding: 64px 0;
+  }
+
+  .section-head {
+    margin-bottom: 36px;
+  }
+
+  /* booking form */
+  .booking-main {
+    padding: 32px 28px;
+  }
+
+  /* contact */
+  .contact-cta {
+    padding: 36px;
+  }
+
+  /* top bar */
+  .topbar-email {
+    display: none;
+  }
+
+  /* hero */
+  .hero {
+    padding: 48px 0 64px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-visual {
+    height: 400px;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* services */
+  .services-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* why us */
+  .why-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .why-content {
+    order: -1;
+  }
+
+  /* use the full width: features in 2 columns, stats in one row */
+  .why-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 16px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* pricing */
+  .amc-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .amc-card.popular {
+    transform: none;
+  }
+
+  /* booking form */
+  .booking-scene {
+    min-height: 260px;
+  }
+
+  .scene-hint {
+    display: none;
+  }
+
+  .booking-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-aside {
+    padding: 32px 28px;
+  }
+
+  /* service areas */
+  .areas-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* faq */
+  .faq-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .faq-intro {
+    position: static;
+  }
+}
+/* ======================= TABLET (≤ 991px) END ====================== */
+
+/* ======================= SMALL TABLET / LARGE PHONE (≤ 768px) START ====================== */
+@media (max-width: 768px) {
+  /* global */
+  .section-head {
+    margin-bottom: 32px;
+  }
+
+  /* offer banner */
+  .offer-banner {
+    font-size: 0.8rem;
+  }
+
+  .offer-inner {
+    min-height: 36px;
+    padding-block: 6px;
+  }
+
+  /* navbar: scrollable menu + highlighted phone link */
+  .navbar-menu {
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+
+  .navbar-phone {
+    justify-content: center;
+    padding: 10px;
+    border-radius: var(--radius);
+    background-color: var(--color-primary-soft);
+  }
+
+  /* brands */
+  .brands {
+    padding: 28px 0;
+  }
+
+  .brand-chip {
+    min-width: 150px;
+    height: 68px;
+  }
+
+  /* testimonials */
+  .testimonial-grid {
+    gap: 16px;
+  }
+
+  /* service areas */
+  .areas-list li {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  /* floating buttons + toast (keep toast above the buttons) */
+  .floating-buttons {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .float-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .toast {
+    bottom: 84px;
+  }
+
+  /* basic settings */
+  .section {
+    padding: 56px 0;
+  }
+
+  /* navbar */
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 20px 16px;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow);
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--transition), opacity var(--transition), visibility var(--transition);
+  }
+
+  .navbar-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .navbar-btn {
+    text-align: center;
+  }
+
+  /* top bar */
+  .topbar-contact {
+    display: none;
+  }
+
+  .topbar-inner {
+    justify-content: center;
+    padding-block: 6px;
+  }
+
+  .topbar-info {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 16px;
+    font-size: 0.8rem;
+  }
+
+  /* how it works */
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .steps::before {
+    top: 36px;
+    bottom: 36px;
+    left: 34px;
+    right: auto;
+    border-top: none;
+    border-left: 3px dashed #93c5fd;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    column-gap: 20px;
+    text-align: left;
+    padding: 0;
+  }
+
+  .step-num {
+    grid-row: span 2;
+    margin: 0;
+  }
+
+  .step h3 {
+    align-self: end;
+  }
+
+  /* pricing */
+  .rate-card {
+    grid-template-columns: 1fr;
+    padding: 8px 20px;
+  }
+
+  /* AMC plans become a swipeable row instead of a tall stack */
+  .amc-grid {
+    display: flex;
+    gap: 16px;
+    max-width: none;
+    margin: 0 -16px;
+    padding: 18px 16px 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .amc-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .amc-card {
+    flex: 0 0 min(85%, 340px);
+    scroll-snap-align: center;
+  }
+
+  /* contact */
+  .contact-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 22px;
+  }
+
+  .contact-cta-actions {
+    width: 100%;
+  }
+
+  /* footer */
+  .footer-contact {
+    grid-template-columns: 1fr;
+    padding: 36px 0 28px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+/* ======================= SMALL TABLET / LARGE PHONE (≤ 768px) END ====================== */
+
+/* ======================= PHONE (≤ 576px) START ====================== */
+@media (max-width: 576px) {
+  /* global */
+  .btn:not(.btn-lg) {
+    padding: 12px 22px;
+  }
+
+  /* hero */
+  .hero-trust {
+    gap: 12px 20px;
+  }
+
+  .hero-trust li {
+    font-size: 0.88rem;
+  }
+
+  /* why us */
+  .why-years-label {
+    font-size: 1rem;
+  }
+
+  /* pricing */
+  .amc-title {
+    margin: 48px 0 24px;
+  }
+
+  .amc-price {
+    font-size: 1.9rem;
+  }
+
+  /* booking wizard */
+  .wizard-progress button {
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+
+  .wizard-title {
+    font-size: 1.2rem;
+  }
+
+  .day-chip {
+    padding: 10px 4px;
+  }
+
+  .wizard-actions .btn-outline {
+    padding: 12px 18px;
+  }
+
+  /* faq */
+  .faq-q {
+    padding: 16px 18px;
+    font-size: 0.95rem;
+  }
+
+  .faq-a p {
+    padding: 0 18px 18px;
+  }
+
+  /* contact */
+  .contact-card {
+    padding: 18px;
+  }
+
+  /* hero */
+  .hero-quick {
+    flex-wrap: wrap;
+  }
+
+  .hero-quick-toggle {
+    width: 100%;
+  }
+
+  .hero-quick-toggle button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .hero-quick-pin {
+    padding: 0 8px;
+  }
+
+  .hero-quick .btn {
+    padding: 12px 18px;
+  }
+
+  .hero-highlight {
+    white-space: normal;
+  }
+
+  .hero-visual {
+    height: 330px;
+  }
+
+  .hero-stage {
+    inset: 24px 8px;
+    border-radius: 28px;
+  }
+
+  .hero-float {
+    padding: 8px 12px;
+  }
+
+  .hero-float-1 {
+    left: -4px;
+    top: 120px;
+  }
+
+  .hero-float-3 {
+    display: none;
+  }
+
+  /* services */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs {
+    width: 100%;
+  }
+
+  .tab {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 8px;
+    font-size: 0.88rem;
+  }
+
+  /* booking form */
+  .booking-shell {
+    border-radius: 24px;
+  }
+
+  .booking-main {
+    padding: 28px 18px;
+  }
+
+  .booking-aside {
+    padding: 28px 20px;
+  }
+
+  .form-row,
+  .form-row-address {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* hero trust row: 3 equal columns instead of wrapping 2 + 1 */
+  .hero-trust {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .hero-trust li {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+    font-size: 0.82rem;
+  }
+
+  /* services: compact horizontal cards (icon left, text right) */
+  .card-grid {
+    gap: 12px;
+  }
+
+  .service-card {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    column-gap: 14px;
+    align-items: start;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .service-card .icon-box {
+    width: 48px;
+    height: 48px;
+    grid-row: span 2;
+  }
+
+  .service-card h3 {
+    margin: 2px 0 4px;
+    font-size: 1.05rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+
+  .service-card-foot {
+    grid-column: 1 / -1;
+    margin-top: 14px;
+  }
+
+  .service-card .price strong {
+    display: inline;
+    font-size: 1.15rem;
+  }
+
+  .service-num,
+  .tab svg {
+    display: none;
+  }
+
+  /* why us: back to single column / 2x2 stats */
+  .why-list {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* booking: smaller scene so the form is reached sooner */
+  .booking-scene {
+    min-height: 230px;
+    margin: 20px 0 16px;
+  }
+
+  .scene-ac-unit {
+    top: 12px;
+    width: min(70%, 220px);
+  }
+
+  .scene-wm-unit {
+    bottom: 96px;
+    width: min(34%, 110px);
+  }
+
+  .bubble {
+    bottom: 130px;
+  }
+}
+/* ======================= PHONE (≤ 576px) END ====================== */
+
+/* ======================= SMALL PHONE (≤ 480px) START ====================== */
+@media (max-width: 480px) {
+  /* top bar */
+  .topbar-info {
+    font-size: 0.75rem;
+  }
+
+  /* navbar */
+  .navbar-logo {
+    font-size: 1.3rem;
+  }
+
+  /* hero */
+  .hero-rating {
+    font-size: 0.8rem;
+  }
+
+  /* why us */
+  .stat strong {
+    font-size: 1.35rem;
+  }
+
+  /* brands */
+  .brand-chip {
+    min-width: 140px;
+    height: 64px;
+    padding: 0 20px;
+  }
+
+  .brand-logo {
+    height: 22px;
+  }
+
+  /* why us */
+  .why-panel {
+    padding: 24px 20px;
+    border-radius: 24px;
+  }
+
+  .why-years {
+    font-size: 4rem;
+  }
+
+  .why-list li {
+    padding: 12px 0;
+  }
+
+  /* booking form */
+  .service-options {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-summary li {
+    grid-template-columns: 32px 1fr;
+  }
+
+  .summary-label {
+    display: none;
+  }
+
+  .summary-value {
+    text-align: left;
+  }
+
+  /* footer */
+  .footer {
+    padding-bottom: 80px;
+    /* room for floating buttons */
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* ======================= SMALL PHONE (≤ 480px) END ====================== */
+
+/* ======================= EXTRA SMALL PHONE (≤ 360px) START ====================== */
+@media (max-width: 360px) {
+  /* hero */
+  .hero h1 {
+      font-size: 1.85rem;
+    }
+
+  .hero-rating {
+      font-size: 0.8rem;
+    }
+
+  .hero-quick-toggle button {
+      padding: 10px 8px;
+      font-size: 0.85rem;
+    }
+
+  /* services */
+  .tab {
+      font-size: 0.8rem;
+    }
+
+  /* booking form */
+  .day-chip {
+      padding: 10px 4px;
+      font-size: 0.85rem;
+    }
+
+  .wizard-progress button {
+      font-size: 0.78rem;
+      gap: 5px;
+    }
+
+  /* footer */
+  .footer-grid {
+      grid-template-columns: 1fr;
+    }
+}
+/* ======================= EXTRA SMALL PHONE (≤ 360px) END ====================== */
+
+/* ======================= REDUCED MOTION START ====================== */
+@media (prefers-reduced-motion: reduce) {
+  /* hero */
+  .hero-float,
+  .hero-drum,
+  .hero-air path,
+  .brands-track {
+    animation: none !important;
+  }
+
+  /* booking form */
+  .scene-perks ul {
+    height: auto;
+    display: grid;
+    gap: 8px;
+  }
+
+  .scene-perk {
+    position: static;
+    opacity: 1;
+    animation: none;
+  }
+
+  .scene-perk-dots {
+    display: none;
+  }
+
+  .snow,
+  .bubble,
+  .scene-drum {
+    animation: none !important;
+  }
+}
+/* ======================= REDUCED MOTION END ====================== */
