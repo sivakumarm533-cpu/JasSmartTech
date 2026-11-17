@@ -126,6 +126,11 @@ button {
   border: 2px solid transparent;
 }
 
+/* icons inside buttons must never shrink */
+.btn svg {
+  flex-shrink: 0;
+}
+
 .btn-outline {
   background-color: transparent;
   color: var(--color-primary);

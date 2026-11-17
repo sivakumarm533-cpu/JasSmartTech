@@ -1,4 +1,5 @@
 import Icon from './Icon'
+import LogoMark from './LogoMark'
 import { business, services, serviceAreas, whatsappLink } from '../data/siteData'
 
 const quickLinks = [
@@ -49,7 +50,13 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <a href="#home" className="navbar-logo">
-              Jas<span>SmartTech</span>
+              <LogoMark size={44} />
+              <span className="logo-text">
+                <span className="logo-name">
+                  Jas<span>SmartTech</span>
+                </span>
+                <small>AC & Washer Experts</small>
+              </span>
             </a>
             <p>Doorstep AC and washing machine service with certified technicians, genuine parts and a 30-day warranty.</p>
             <div className="socials">

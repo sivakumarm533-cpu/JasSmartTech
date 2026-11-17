@@ -30,6 +30,11 @@
 
 /* ======================= SMALL LAPTOP (992px – 1199px) START ====================== */
 @media (min-width: 992px) and (max-width: 1199px) {
+  /* navbar: phone shown as icon only to make room for the links */
+  .navbar-call-text {
+    display: none;
+  }
+
   /* hero: quick-book bar is too narrow for one row here, so stack the toggle */
   .hero-quick {
     flex-wrap: wrap;
@@ -66,13 +71,9 @@
 
 /* ======================= TABLET LANDSCAPE ONLY (769px – 1024px) START ====================== */
 @media (min-width: 769px) and (max-width: 1024px) {
-  /* navbar extras */
-  .navbar-phone {
-    display: none;
-  }
-
-  .navbar-links {
-    gap: 18px;
+  /* navbar: tighter links, phone shown as icon only */
+  .navbar-links a {
+    padding: 8px 12px;
   }
 }
 /* ======================= TABLET LANDSCAPE ONLY (769px – 1024px) END ====================== */
@@ -92,6 +93,21 @@
 
 /* ======================= TABLET (≤ 991px) START ====================== */
 @media (max-width: 991px) {
+  /* navbar: links move into the slide-in drawer */
+  .navbar-nav,
+  .navbar-call-text {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-inner,
+  .navbar.scrolled .navbar-inner {
+    height: 70px;
+  }
+
   /* global */
   .section {
     padding: 64px 0;
@@ -226,19 +242,6 @@
     padding-block: 6px;
   }
 
-  /* navbar: scrollable menu + highlighted phone link */
-  .navbar-menu {
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
-  }
-
-  .navbar-phone {
-    justify-content: center;
-    padding: 10px;
-    border-radius: var(--radius);
-    background-color: var(--color-primary-soft);
-  }
-
   /* brands */
   .brands {
     padding: 28px 0;
@@ -278,45 +281,6 @@
   /* basic settings */
   .section {
     padding: 56px 0;
-  }
-
-  /* navbar */
-  .navbar-toggle {
-    display: flex;
-  }
-
-  .navbar-menu {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-    padding: 20px 16px;
-    background-color: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: var(--shadow);
-    transform: translateY(-10px);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform var(--transition), opacity var(--transition), visibility var(--transition);
-  }
-
-  .navbar-menu.open {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .navbar-links {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .navbar-btn {
-    text-align: center;
   }
 
   /* top bar */
@@ -423,6 +387,15 @@
 
 /* ======================= PHONE (≤ 576px) START ====================== */
 @media (max-width: 576px) {
+  /* navbar: Book button lives in the drawer on phones */
+  .navbar-actions .navbar-btn {
+    display: none;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
   /* global */
   .btn:not(.btn-lg) {
     padding: 12px 22px;
@@ -664,8 +637,13 @@
   }
 
   /* navbar */
-  .navbar-logo {
-    font-size: 1.3rem;
+  .logo-name {
+    font-size: 1.2rem;
+  }
+
+  .navbar-logo .logo-mark {
+    width: 38px;
+    height: 38px;
   }
 
   /* hero */
@@ -735,6 +713,11 @@
 
 /* ======================= EXTRA SMALL PHONE (≤ 360px) START ====================== */
 @media (max-width: 360px) {
+  /* navbar */
+  .logo-text small {
+    display: none;
+  }
+
   /* hero */
   .hero h1 {
       font-size: 1.85rem;
