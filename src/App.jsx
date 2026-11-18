@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import './App.css'
 import './assets/css/component.css'
+import './assets/css/modern.css'
 import './assets/css/responsive.css' // must stay last: media queries override base styles
 import OfferBanner from './components/OfferBanner'
 import TopBar from './components/TopBar'
@@ -19,10 +20,12 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import FloatingButtons from './components/FloatingButtons'
 import Toast from './components/Toast'
+import useReveal from './hooks/useReveal'
 
 function App() {
   const [preset, setPreset] = useState(null)
   const [toast, setToast] = useState('')
+  useReveal()
 
   // Prefill the booking form from any "Book" button and scroll to it.
   const handleBook = (appliance, service, extra = {}) => {

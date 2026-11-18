@@ -105,7 +105,7 @@ function Hero({ onBook }) {
               <rect x="30" y="80" width="260" height="6" rx="3" fill="#c7d7f5" />
               <circle cx="270" cy="32" r="6" fill="#22c55e" />
               <rect x="210" y="27" width="44" height="10" rx="5" fill="#dbe6fb" />
-              <text x="30" y="44" fontFamily="Inter, sans-serif" fontWeight="800" fontSize="22" fill="#0d6efd">18°C</text>
+              <text x="30" y="44" fontFamily="Inter, sans-serif" fontWeight="800" fontSize="22" fill="#4361ee">18°C</text>
               <g className="hero-air" stroke="#fff" strokeWidth="4" strokeLinecap="round" fill="none">
                 <path d="M70 104c10 6 20 6 30 0" />
                 <path d="M145 108c10 6 20 6 30 0" />
@@ -118,11 +118,11 @@ function Hero({ onBook }) {
               <rect x="6" y="6" width="188" height="228" rx="22" fill="#fff" />
               <rect x="6" y="6" width="188" height="44" rx="22" fill="#eef4ff" />
               <rect x="6" y="30" width="188" height="20" fill="#eef4ff" />
-              <circle cx="36" cy="28" r="8" fill="#0d6efd" />
+              <circle cx="36" cy="28" r="8" fill="#4361ee" />
               <rect x="56" y="22" width="56" height="12" rx="6" fill="#c7d7f5" />
               <circle cx="164" cy="28" r="10" fill="#ff7a00" />
               <circle cx="100" cy="140" r="66" fill="#dbe6fb" />
-              <circle cx="100" cy="140" r="52" fill="#0d6efd" />
+              <circle cx="100" cy="140" r="52" fill="#4361ee" />
               <g className="hero-drum">
                 <path d="M60 150c15-12 30 12 45 0s30 12 45 0v20a52 52 0 0 1-90 0z" fill="#4d94ff" />
                 <circle cx="82" cy="118" r="6" fill="#fff" opacity=".7" />

@@ -40,7 +40,7 @@ function AcScene() {
         <rect x="2" y="54" width="236" height="14" rx="10" fill="#e6efff" />
         <rect x="24" y="57" width="192" height="4" rx="2" fill="#b9cdf3" />
         <circle cx="210" cy="22" r="5" fill="#22c55e" />
-        <text x="22" y="34" fontFamily="Inter, sans-serif" fontWeight="800" fontSize="18" fill="#0d6efd">
+        <text x="22" y="34" fontFamily="Inter, sans-serif" fontWeight="800" fontSize="18" fill="#4361ee">
           16°C
         </text>
       </svg>
@@ -87,11 +87,11 @@ function WasherScene() {
         <rect x="4" y="4" width="152" height="172" rx="18" fill="#fff" />
         <rect x="4" y="4" width="152" height="34" rx="18" fill="#e6efff" />
         <rect x="4" y="24" width="152" height="14" fill="#e6efff" />
-        <circle cx="28" cy="21" r="6" fill="#0d6efd" />
+        <circle cx="28" cy="21" r="6" fill="#4361ee" />
         <rect x="44" y="16" width="44" height="10" rx="5" fill="#b9cdf3" />
         <circle cx="132" cy="21" r="8" fill="#ff7a00" />
         <circle cx="80" cy="106" r="52" fill="#dbe6fb" />
-        <circle cx="80" cy="106" r="41" fill="#0d6efd" />
+        <circle cx="80" cy="106" r="41" fill="#4361ee" />
         <g className="scene-drum">
           <path d="M47 114c11-9 22 9 33 0s22 9 33 0v14a41 41 0 0 1-66 0z" fill="#60a5fa" />
           <circle cx="64" cy="88" r="5" fill="#fff" opacity=".75" />

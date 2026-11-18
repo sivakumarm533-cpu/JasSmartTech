@@ -699,11 +699,6 @@
   }
 
   /* footer */
-  .footer {
-    padding-bottom: 80px;
-    /* room for floating buttons */
-  }
-
   .footer-bottom-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -754,6 +749,220 @@
     }
 }
 /* ======================= EXTRA SMALL PHONE (≤ 360px) END ====================== */
+
+/* ======================= MODERN MOBILE POLISH START ======================
+   Fixes for the modern visual layer on small screens + touch devices.
+========================================================================= */
+
+/* Wrapped quick-book bar: a pill shape looks wrong on two rows */
+@media (min-width: 992px) and (max-width: 1199px), (max-width: 576px) {
+  .hero-quick {
+    border-radius: 24px;
+  }
+}
+
+/* Large phone / small tablet: rate card still fits two columns */
+@media (min-width: 577px) and (max-width: 768px) {
+  .rate-card {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 28px;
+    padding: 8px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* inputs at 16px stop iOS Safari zooming in on focus */
+  .hero-quick-pin input,
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
+  }
+
+  /* vertical step timeline in the new palette */
+  .steps::before {
+    border-left: 2px dashed rgba(var(--primary-rgb), 0.3);
+  }
+
+  /* booking: drop the animated AC/washer scene so the form comes first */
+  .booking-scene {
+    display: none;
+  }
+
+  /* keep floating buttons clear of the iPhone home bar */
+  .floating-buttons {
+    right: calc(14px + env(safe-area-inset-right));
+    bottom: calc(14px + env(safe-area-inset-bottom));
+  }
+
+  /* footer: no extra empty space at the bottom; the copyright row just
+     keeps clear of the floating button column on the right */
+  .footer {
+    padding-bottom: 0;
+  }
+
+  .footer-bottom {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+
+  .footer-bottom-inner {
+    padding-right: 72px;
+  }
+
+  /* back-to-top moves into the floating stack (above Call) */
+  .footer .back-to-top {
+    display: none;
+  }
+
+  .float-top {
+    display: grid;
+  }
+
+  /* toast sits above the floating button stack */
+  .toast {
+    border-radius: 18px;
+    bottom: calc(206px + env(safe-area-inset-bottom));
+  }
+
+  .why-panel {
+    border-radius: 28px;
+  }
+
+  .contact-cta {
+    border-radius: 26px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* section rhythm */
+  .section {
+    padding: 52px 0;
+  }
+
+  .section-head h2,
+  .services-head h2,
+  .why-content h2,
+  .faq-intro h2,
+  .booking-info h2,
+  .areas-inner h2 {
+    font-size: 1.65rem;
+  }
+
+  /* service tabs: never wrap "Washing Machine" onto two lines */
+  .tab {
+    white-space: nowrap;
+    gap: 6px;
+  }
+
+  /* testimonials become a swipeable row */
+  .testimonial-grid {
+    display: flex;
+    gap: 14px;
+    margin: 0 -16px;
+    padding: 4px 16px 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .testimonial-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonial {
+    flex: 0 0 86%;
+    scroll-snap-align: center;
+    padding: 26px 22px 22px;
+  }
+
+  /* contact cards: tighter so five of them don't fill three screens */
+  .contact-grid {
+    gap: 12px;
+  }
+
+  .contact-card {
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 18px;
+  }
+
+  .contact-card .icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
+
+  .contact-cta {
+    margin-bottom: 28px;
+  }
+
+  /* footer: contact tiles more compact */
+  .footer-contact {
+    gap: 10px;
+  }
+
+  .footer-contact-item {
+    padding: 14px 16px;
+  }
+
+  /* booking: rounder, roomier step tabs */
+  .booking-shell {
+    border-radius: 26px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tab-count {
+    display: none;
+  }
+
+  .tab {
+    padding: 10px 6px;
+  }
+}
+
+/* ≤360px: footer stays 2 columns (short link lists), brand full width */
+@media (max-width: 360px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+  }
+
+  .footer ul {
+    font-size: 0.88rem;
+  }
+
+  .hero-quick .btn {
+    padding: 12px 14px;
+  }
+}
+
+/* Touch screens: hover lifts "stick" after a tap, so switch them off */
+@media (hover: none) {
+  .why-list li:hover,
+  .testimonial:hover,
+  .amc-card:hover,
+  .stat:hover,
+  .areas-list li:hover,
+  a.contact-card:hover {
+    transform: none;
+  }
+
+  .amc-card.popular:hover {
+    transform: none;
+  }
+
+  .btn::after {
+    display: none;
+  }
+}
+
+@media (hover: none) and (min-width: 992px) {
+  .amc-card.popular:hover {
+    transform: scale(1.03);
+  }
+}
+/* ======================= MODERN MOBILE POLISH END ====================== */
 
 /* ======================= REDUCED MOTION START ====================== */
 @media (prefers-reduced-motion: reduce) {
